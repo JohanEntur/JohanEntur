@@ -1,0 +1,983 @@
+meta 
+{
+    title: "Entur wayPropertySet";
+    description: "Entur JOSM Map Paint Style";
+	
+    version: "2.0";
+    author: "Johan Wiklund, Entur AS";
+	icon: "http://osm.wzh.be/josm/EN_60px.png";
+}
+
+canvas
+{
+	fill-color: #000;
+}
+
+setting::def
+{
+  type: boolean;
+  label: tr("Default");
+  default: false;
+}
+setting::norway
+{
+  type: boolean;
+  label: tr("Norway");
+  default: true;
+}
+setting::finland
+{
+  type: boolean;
+  label: tr("Finland");
+  default: false;
+}
+setting::uk
+{
+  type: boolean;
+  label: tr("UK");
+  default: false;
+}
+setting::germany
+{
+  type: boolean;
+  label: tr("Germany");
+  default: false;
+}
+
+
+node
+{
+    symbol-size: 3;
+    symbol-shape: circle;
+    symbol-stroke-color: #700;
+    symbol-fill-color: #000;
+	symbol-stroke-width: 0.2;
+}
+
+way[highway]
+{
+	text: concat(tag(name)," ",tag(ref));
+	font-family: Arial;
+	font-size: 12;
+	text-color: #000;
+}
+
+way[highway=construction][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=construction][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=raceway][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=raceway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=3][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=3][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=4][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=4][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=5][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=5][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=6][setting("norway")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=lane][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_lane][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_track][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=share_busway][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=shared_lane][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=track][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=bridleway][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=bridleway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=cycleway][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][area=yes][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][area=yes][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][surface][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][surface][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][surface][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][surface][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[mtb:scale=0][setting("norway")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[mtb:scale=0][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[footway=sidewalk][highway=footway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=corridor][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=corridor][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=crossing][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=crossing][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=platform][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=platform][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=steps][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=steps][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=1][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=1][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=2][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=2][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[public_transport=platform][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[railway=platform][setting("norway")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=motorway][bicycle=designated][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=share_busway][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][bicycle=designated][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=share_busway][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("norway")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][setting("norway")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway_link][setting("norway")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk][setting("norway")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("norway")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+way[highway][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=byway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=byway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=living_street][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=living_street][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=road][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=road][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=share_busway][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=share_busway][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=shared_lane][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=shared_lane][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=track][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][bicycle=designated][setting("norway")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][bicycle=designated][setting("norway")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+
+
+
+way[footway=sidewalk][highway=footway][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[footway=sidewalk][highway=footway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway][cycleway=lane][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_lane][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_track][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=share_busway][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=shared_lane][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=track][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=bridleway][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=bridleway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=byway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=byway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=construction][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=construction][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=corridor][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=corridor][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=crossing][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=crossing][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=cycleway][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][area=yes][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][area=yes][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=living_street][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=living_street][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=motorway][setting("def")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway][bicycle=designated][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=share_busway][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][setting("def")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway_link][bicycle=designated][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=share_busway][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=path][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=platform][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=platform][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=primary][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=raceway][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=raceway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=residential][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=road][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=road][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=steps][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=steps][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=tertiary][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=share_busway][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=shared_lane][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=shared_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][surface][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][surface][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][surface][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][surface][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=trunk][setting("def")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][setting("def")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("def")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk_link][setting("def")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("def")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=track][setting("def")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=unclassified][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][bicycle=designated][setting("def")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][bicycle=designated][setting("def")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+
+way[mtb:scale=0][setting("def")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[mtb:scale=0][setting("def")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[mtb:scale=1][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=1][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=2][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=2][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=3][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=3][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=4][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=4][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=5][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=5][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=6][setting("def")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("def")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[public_transport=platform][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[railway=platform][setting("def")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("def")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+way[footway=sidewalk][highway=footway][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[footway=sidewalk][highway=footway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway][cycleway=lane][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_lane][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_track][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=share_busway][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=shared_lane][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=track][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][informal=yes][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway][informal=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=bridleway][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=bridleway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=byway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=byway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=construction][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=construction][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=corridor][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=corridor][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=crossing][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=crossing][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=cycleway][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=cycleway][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=footway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=footway][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][area=yes][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][area=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=living_street][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=living_street][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=motorway][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway][bicycle=designated][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=share_busway][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway_link][bicycle=designated][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=share_busway][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=path][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=platform][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=platform][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=primary][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=raceway][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=raceway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=residential][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=road][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=road][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][access=destination][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][access=destination][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][access=private][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=service][access=private][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=service][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][tunnel=yes][access=destination][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=service][tunnel=yes][access=destination][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=steps][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=steps][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=tertiary][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=share_busway][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=shared_lane][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=shared_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][surface][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][surface][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][surface][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][surface][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=trail][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=trail][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=trunk][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][tunnel=yes][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][tunnel=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk_link][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("finland")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=track][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=unclassified][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][bicycle=designated][setting("finland")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][bicycle=designated][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+
+way[motorroad=yes][setting("finland")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[motorroad=yes][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[mtb:scale=0][setting("finland")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[mtb:scale=0][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[mtb:scale=1][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=1][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=2][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=2][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=3][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=3][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=4][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=4][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=5][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=5][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=6][setting("finland")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[public_transport=platform][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[railway=platform][setting("finland")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("finland")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+way[footway=sidewalk][highway=footway][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[footway=sidewalk][highway=footway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway][cycleway=lane][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_lane][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_track][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=share_busway][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=shared_lane][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=track][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=bridleway][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=bridleway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=byway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=byway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=construction][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=construction][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=corridor][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=corridor][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=crossing][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=crossing][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=cycleway][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][area=yes][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][area=yes][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=living_street][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=living_street][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=motorway][setting("uk")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway][bicycle=designated][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=share_busway][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][setting("uk")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway_link][bicycle=designated][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=share_busway][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=path][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=platform][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=platform][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=primary][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=raceway][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=raceway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=residential][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=road][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=road][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=steps][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=steps][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=tertiary][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=shared_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=shared_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][surface][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][surface][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][surface][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][surface][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=trunk][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][setting("uk")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("uk")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk_link][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=trunk_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("uk")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=track][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=unclassified][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][bicycle=designated][setting("uk")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][bicycle=designated][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+
+way[mtb:scale=0][setting("uk")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[mtb:scale=0][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[mtb:scale=1][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=1][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=2][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=2][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=3][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=3][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=4][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=4][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=5][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=5][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=6][setting("uk")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[public_transport=platform][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[railway=platform][setting("uk")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("uk")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+way[footway=sidewalk][highway=footway][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[footway=sidewalk][highway=footway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[footway=sidewalk][highway=footway][bicycle=yes][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[footway=sidewalk][highway=footway][bicycle=yes][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway][cycleway=lane][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_lane][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=opposite_track][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=share_busway][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=shared_lane][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][cycleway=track][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway][junction=roundabout][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway][junction=roundabout][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=bridleway][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=bridleway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=byway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=byway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=construction][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=construction][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=corridor][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=corridor][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=crossing][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=crossing][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=cycleway][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=cycleway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][bicycle=yes][area=yes][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][bicycle=yes][area=yes][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=footway][footway=crossing][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=footway][footway=crossing][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=living_street][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=living_street][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=motorway][setting("germany")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway][bicycle=designated][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway][cycleway=share_busway][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][setting("germany")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=motorway_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=motorway_link][bicycle=designated][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=motorway_link][cycleway=share_busway][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=motorway_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=path][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=path][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=path][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=pedestrian][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=pedestrian][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=pedestrian][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=pedestrian][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=platform][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=platform][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[highway=primary][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=primary_link][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=primary_link][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=raceway][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[highway=raceway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[highway=residential][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][junction=roundabout][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][junction=roundabout][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential][maxspeed=30][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential][maxspeed=30][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=residential_link][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=residential_link][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=road][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=road][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=secondary_link][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=secondary_link][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=service][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=service][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=steps][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[highway=steps][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+
+way[highway=tertiary][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=opposite_track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=share_busway][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=shared_lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=shared_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=tertiary_link][cycleway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=tertiary_link][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=designated][surface][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=designated][surface][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][bicycle=yes][surface][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][bicycle=yes][surface][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=track][surface][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[highway=track][surface][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[highway=trunk][setting("germany")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk][bicycle=designated][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=opposite_track][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=share_busway][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk][cycleway=track][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][setting("germany")]{color:#ce03fc;width:3; z-index:6; text:"CAR"  ...;}way[highway=trunk_link][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#ce03fc; fill-opacity: 0.5;}
+way[highway=trunk_link][bicycle=designated][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_lane][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=opposite_track][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=opposite_track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=share_busway][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=share_busway][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=trunk_link][cycleway=track][setting("germany")]{color:#03ebfc;width:3; z-index:7; text:"BICYCLE_AND_CAR"  ...;}way[highway=trunk_link][cycleway=track][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#03ebfc; fill-opacity: 0.5;}
+way[highway=unclassified][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][bicycle=designated][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][bicycle=designated][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+way[highway=unclassified][cycleway=lane][setting("germany")]{color:#fcad03;width:3; z-index:5; text:"ALL"  ...;}way[highway=unclassified][cycleway=lane][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#fcad03; fill-opacity: 0.5;}
+
+
+
+
+
+
+way[mtb:scale=0][setting("germany")]{color:#00cfa9;width:3; z-index:9; text:"PEDESTRIAN_AND_BICYCLE"  ...;}way[mtb:scale=0][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#00cfa9; fill-opacity: 0.5;}
+way[mtb:scale=1][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=1][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=2][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[mtb:scale=2][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[mtb:scale=3][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=3][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=4][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=4][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=5][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=5][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[mtb:scale=6][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
+way[public_transport=platform][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+way[railway=platform][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
