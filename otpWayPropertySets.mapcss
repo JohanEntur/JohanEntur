@@ -1,11 +1,11 @@
 meta 
 {
-    title: "Entur wayPropertySet";
-    description: "Entur JOSM Map Paint Style";
+    title: "OTP wayPropertySet";
+    description: "JOSM (https://josm.openstreetmap.de/) Map Paint Style showing access rights for different OTP-settings: https://www.opentripplanner.org/ https://otp2debug.entur.org/otp/report/bicycle-safety.html";
 	
-    version: "2.0";
+    version: "1.0";
     author: "Johan Wiklund, Entur AS";
-	icon: "http://osm.wzh.be/josm/EN_60px.png";
+	icon: "https://www.opentripplanner.org/otp-logo.svg";
 }
 
 canvas
@@ -43,7 +43,6 @@ setting::germany
   label: tr("Germany");
   default: false;
 }
-
 
 node
 {
@@ -956,28 +955,3 @@ way[mtb:scale=5][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NO
 way[mtb:scale=6][setting("germany")]{color:#cf0029;width:3; z-index:10; text:"NONE"  ...;}way[mtb:scale=6][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#cf0029; fill-opacity: 0.5;}
 way[public_transport=platform][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[public_transport=platform][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
 way[railway=platform][setting("germany")]{color:#5acf00;width:3; z-index:8; text:"PEDESTRIAN"  ...;}way[railway=platform][setting("germany")][area=yes]{fill-extent: 10000; fill-color:#5acf00; fill-opacity: 0.5;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
