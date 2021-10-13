@@ -2,7 +2,6 @@ meta
 {
     title: "OTP wayPropertySet";
     description: "JOSM (https://josm.openstreetmap.de/) Map Paint Style showing access rights for different OTP-settings: https://www.opentripplanner.org/ https://otp2debug.entur.org/otp/report/bicycle-safety.html";
-	
     version: "1.4";
     author: "Johan Wiklund, Entur AS";
 	icon: "https://www.opentripplanner.org/otp-logo.svg";
